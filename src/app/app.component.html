@@ -1,0 +1,84 @@
+<div id="meinhead"(click)="chengMous()">
+<div id="header">
+
+<div  class="container" >
+
+  +38 067 6725905-Оля; +38 097 5978605-Денис;
+  Україна, Львівська область, Сколівський р-н,село Тухля,вул.Захара Беркута 109б
+  
+</div>
+<h1>Оселя мандрівників</h1>
+
+   
+<nav class="navbar navbar-light bg-light" >
+  <div class="container">
+  <a class="navbar-brand"  href="#home">Будинок</a>
+  <a class="navbar-brand"  href="#abouthom">Подвірья</a>
+  <a class="navbar-brand"  href="#price">Ціни</a>
+  <a class="navbar-brand"  href="#Photogallery">Фото гелерея</a>
+  <a class="navbar-brand"  href="#contact">Контакти</a>
+</div>
+</nav>
+     
+<figure>
+  <img src="assets/imeges/IMG_1538.JPG" class="headImg">
+<!-- <img id="meinimg"  src={{foto[current]}}>
+<a href="#meinimg" (click)="chengLeft()" ><img class="left" src="assets/imeges/arrow-left.png"></a>
+<a href="#meinimg" (click)="chengRigth()"><img class="rigth" src="assets/imeges/arrow-right.png"></a> -->
+ </figure>
+</div>
+
+<div id="home" class="rout">Будинок</div>
+
+<div  class="lead">
+  <p>Деревяний двоповерховий зруб, розташованний на березі, в місці 
+    злиття двох річок Сигли та Опіру. Біля лісу та гор.</p>
+  <img src="assets/imeges/riv.JPG" class="img">
+  <a href="#" ><img [@mous]="mousDown"  class="up" src="assets/imeges/if_direction_up_48751.png"></a>
+</div>
+<hr>
+<div id="abouthom"class="rout">Подвірья</div>
+<div  class="lead">
+   <p> На подвір'ї розташованний, мангал, альтанка, 
+     дитячій майданчик, в теплий період року є також батут і басейн.
+  
+  <img src="assets/imeges/Yard4.JPG" class="img">
+  </p>
+  
+</div>
+
+<hr>
+<div id="price" class="rout">Ціни</div>
+<div class="lead">
+ <p> Вартість проживання в будинку 3000 гривень за добу, в Новорічний період 6000 гривень за добу.
+  За додаткову плату можна придбати дрова для мангалу 75 гривень за кошик.
+</p>
+</div>
+<hr> 
+<div class="rout">Фото гелерея</div>
+<figure>
+  
+   
+    <!-- <div  *ngFor="let photo of photoGallery" ><img [src]="photo"></div> -->
+  
+ <img (click)="slider()" id="Photogallery"  src={{photoGallery[i]}}> 
+<a href="#Photogallery" (click)="chengPfotoLeft()" ><img class="left" src="assets/imeges/left.png"></a>
+<a href="#Photogallery" (click)="chengPfotoRigth()"><img class="rigth" src="assets/imeges/right.png"></a>
+<a href="#Photogallery" (click)="chengPlay()"><img class="play" src={{playPause[ipp]}}></a>  
+<!--<a href="#Photogallery"><img class="pause" src="assets/imeges/pause.png"></a>
+<!--<input class="pause" type="submit" style="background-image: url(assets/imeges/pause.png);">-->
+</figure>
+<hr>
+<footer>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2622.3130316717993!2d23.470834!3d48.909428!3m2!1i1024!2i768!4f13.1!5e0!3m2!1suk!2sus!4v1542057005730" width="1500" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+<div id="contact" class="rout">Контакти</div>
+<div  class="lead">
+  <p>Україна, Львівська область, Сколівський р-н,село Тухля,вул.Захара Беркута 109б. </p> 
+  <p>+380 67 6725905- Оля; +380 97 5978605-Денис.</p>
+  <p>email: 249478@gmail.com</p>
+</div>
+<hr>
+
+
+</footer>
+</div>

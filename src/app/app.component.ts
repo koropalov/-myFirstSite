@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { trigger,state, style, transition, animate } from '@angular/animations';
+import { trigger,state, style, transition, animate, group, keyframes } from '@angular/animations';
 import { formControlBinding } from '@angular/forms/src/directives/reactive_directives/form_control_directive';
 
 import { from } from 'rxjs';
+
 
 
 
@@ -22,6 +23,32 @@ import { from } from 'rxjs';
       })),
       transition('start<=>end', animate(3000)),
      
+    ]),
+    trigger('pichure',[
+      state('start',style({
+        opacity:1
+        
+       })),
+       
+        state('end',style({
+         opacity:1
+        })),
+        transition('start<=>end', [
+          style({
+            opacity:'*'
+          }),
+          animate(3000,keyframes([
+            style({opacity:0}),
+            style({opacity:0.5}),
+            style({opacity:1}),
+            style({opacity:1}),
+            style({opacity:1}),
+            style({opacity:1}),
+            style({opacity:1}),
+            style({opacity:0})
+          ]))
+        ]),
+       
     ])
   ]
 })
@@ -31,9 +58,12 @@ export class AppComponent {
   current = 0;
   i = 0;
   mousDown='start';
+  slid='start';
   sliderStatus=true;
    ciclo;
+   cl;
    ipp = 0;
+   
   playPause = [
     'assets/imeges/play.png',
     'assets/imeges/pause.png',
@@ -88,41 +118,43 @@ export class AppComponent {
     'assets/imeges/Yard6.JPG',
   ];
   chengPlay(){
-   this.ipp==0?this.ipp=1:this.ipp=0;
-   this.ipp==1 ? (clearInterval(this.ciclo),this.startSlidercicle()) : clearInterval(this.ciclo);
+    
+   this.ipp==0?this.ipp=1:(this.ipp=0);
+   
+   this.ipp==1 ? (clearInterval(this.ciclo),this.startSlidercicle()) : 
+   (clearInterval(this.ciclo));
   }
-  // chengMous(){
-  //   e.pageY > 850 ? this.mousDown='end' :this.mousDown='start';
-  // }
+  
+
   chengMous(){
 
-    setInterval(()=>{this.mousDown=='start' ? this.mousDown='end':this.mousDown='start'},3000)
-    ;
+    setInterval(()=>{this.mousDown=='start' ? this.mousDown='end':this.mousDown='start'},3000);
+  
   }
+
   startSlidercicle() {
-    this.ciclo = setInterval( ()=>{this.i!==36 ? this.i++ : this.i=0;
-    }, 3000); 
+    
+    
+    this.ciclo = setInterval( ()=>
+    { (this.i!==this.photoGallery.length-1) ?( this.i++,(this.slid=='start'? this.slid='end':this.slid='start')) : (this.i=0)}, 3000); 
+    
 }
   slider(){
-    this.ipp==0 ? (clearInterval(this.ciclo),this.startSlidercicle()) : clearInterval(this.ciclo);
-    this.ipp==1 ? this.ipp=0: this.ipp=1;
+    this.ipp==0 ? (clearInterval(this.ciclo),this.startSlidercicle()): (clearInterval(this.ciclo));
+    this.ipp==1 ? (this.ipp=0): this.ipp=1;
  
    
   }
   chengPfotoRigth(){;
-  this.i!==this.photoGallery.length ? this.i++ : this.i=0;
+    this.i!==this.photoGallery.length-1 ? this.i++ : this.i=0;
+   
   }
   chengPfotoLeft(){
-    this.i!==0 ? this.i-- : this.i=this.photoGallery.length;
+    this.i!==0 ? this.i-- : this.i = this.photoGallery.length-1;
+    
     }
- chengLeft(){
-     this.current!==7 ? this.current++ : this.current=0;
-     console.log();
-    }
-  chengRigth(){
-    this.current!==0 ? this.current-- : this.current=7;
-  }
-  
+
+    
   
   constructor(){
     window.addEventListener('scroll', function(e){

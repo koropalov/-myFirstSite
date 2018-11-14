@@ -4,27 +4,18 @@
 #header{
     background-color: rgb(149, 236, 34);
 }
-img{
-    width: 65%;
-}
+
 figure{
     text-align: center;
 }
-#Photogallery{
-   opacity: 1;
 
-}
- .carousel {
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    transition: opacity 3s; /* Время появления картинки */
-}
+    #Photogallery{
+        
+    width: 65%;
+    
+    }
 
- .demonstration {
-    opacity: 1;
-}  
+
 .left{
     position: relative;
     left: -590px;

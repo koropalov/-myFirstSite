@@ -22,9 +22,7 @@
      
 <figure>
   <img src="assets/imeges/IMG_1538.JPG" class="headImg">
-<!-- <img id="meinimg"  src={{foto[current]}}>
-<a href="#meinimg" (click)="chengLeft()" ><img class="left" src="assets/imeges/arrow-left.png"></a>
-<a href="#meinimg" (click)="chengRigth()"><img class="rigth" src="assets/imeges/arrow-right.png"></a> -->
+
  </figure>
 </div>
 
@@ -56,17 +54,20 @@
 </div>
 <hr> 
 <div class="rout">Фото гелерея</div>
-<figure>
+<figure id="figure" >
   
    
-    <!-- <div  *ngFor="let photo of photoGallery" ><img [src]="photo"></div> -->
+    <!-- <div *ngFor="let photo of photoGallery" ><hr><img id="Photogallery"  [src]="photo"></div> -->
+    
   
- <img (click)="slider()" id="Photogallery"  src={{photoGallery[i]}}> 
+<img [@pichure]="slid"
+  
+ (click)="slider()" id="Photogallery"  src={{photoGallery[i]}}> 
+
 <a href="#Photogallery" (click)="chengPfotoLeft()" ><img class="left" src="assets/imeges/left.png"></a>
 <a href="#Photogallery" (click)="chengPfotoRigth()"><img class="rigth" src="assets/imeges/right.png"></a>
 <a href="#Photogallery" (click)="chengPlay()"><img class="play" src={{playPause[ipp]}}></a>  
-<!--<a href="#Photogallery"><img class="pause" src="assets/imeges/pause.png"></a>
-<!--<input class="pause" type="submit" style="background-image: url(assets/imeges/pause.png);">-->
+
 </figure>
 <hr>
 <footer>

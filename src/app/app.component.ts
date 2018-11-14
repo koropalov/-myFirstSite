@@ -34,17 +34,21 @@ import { from } from 'rxjs';
          opacity:1
         })),
         transition('start<=>end', [
-          style({
-            opacity:'*'
-          }),
-          animate(3000,keyframes([
+          
+          animate(6000,keyframes([
             style({opacity:0}),
-            style({opacity:0.5}),
+            style({opacity:0}),
+            style({opacity:0.7}),
             style({opacity:1}),
             style({opacity:1}),
             style({opacity:1}),
             style({opacity:1}),
             style({opacity:1}),
+            style({opacity:1}),
+            style({opacity:1}),
+            style({opacity:1}),
+            style({opacity:0.7}),
+            style({opacity:0.3}),
             style({opacity:0})
           ]))
         ]),
@@ -136,7 +140,7 @@ export class AppComponent {
     
     
     this.ciclo = setInterval( ()=>
-    { (this.i!==this.photoGallery.length-1) ?( this.i++,(this.slid=='start'? this.slid='end':this.slid='start')) : (this.i=0)}, 3000); 
+    { (this.i!==this.photoGallery.length-1) ?( this.i++,(this.slid=='start'? this.slid='end':this.slid='start')) : (this.i=0)}, 6000); 
     
 }
   slider(){
